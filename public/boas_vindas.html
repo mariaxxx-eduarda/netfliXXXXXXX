@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <a href="boas_vindas.html" class="logo">NETFLIX</a>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span id="nomeUsuario" style="font-weight: 600;"></span>
+      <a id="btn-ir-admin" href="admin.html" class="btn" style="display: none; width: auto; height: 38px; padding: 0 16px; margin: 0; background: #333; align-items: center;">Painel Admin</a>
+      <button onclick="sair()" style="width: auto; height: 38px; padding: 0 18px; margin: 0;">Sair</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div style="max-width: 540px;">
+      <span style="background: #e50914; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 3px;">TOP 1 HOJE</span>
+      <h2 style="font-size: 2.8rem; margin: 12px 0;">Stranger Things</h2>
+      <p style="color: #d2d2d2;">Quando um garoto desaparece, uma pequena cidade descobre um mistério envolvendo experimentos secretos e forças sobrenaturais.</p>
+    </div>
+  </section>
+
+  <section style="padding: 20px 4% 50px;">
+    <h2 style="font-size: 1.4rem; margin-bottom: 18px;">Populares na Netflix</h2>
+    <div class="grid-filmes" id="listaFilmes"></div>
+  </section>
+
+
+<main class="catalogo">
+
+  <section class="categoria categoria-destaques">
+    <h2>Em alta agora</h2>
+    <div class="grid-filmes destaque" id="listaDestaques"></div>
+    <div>
+     
+      <img src="img/stranger-things.webp" alt="">
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h2>Séries populares</h2>
+    <div class="grid-filmes series" id="listaSeries"></div>
+  </section>
+
+
+
+
+
+</main>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

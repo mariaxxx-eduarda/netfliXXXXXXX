@@ -1,0 +1,394 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141414;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+header {
+    width: 100%;
+    height: 75px;
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111111;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.usuario-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#nomeUsuario {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.btn {
+    background: #333333;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.btn-sair {
+    background: #e50914;
+    color: white;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-sair:hover {
+    background: #b20710;
+}
+
+/* =====================================
+   BANNER PRINCIPAL
+===================================== */
+
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 50px 5%;
+    background:
+        linear-gradient(to right, #141414 5%, transparent 100%),
+        linear-gradient(to top, #141414 2%, transparent 65%),
+        url("https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg");
+
+    background-size: cover;
+    background-position: center 30%;
+}
+
+.hero-conteudo {
+    max-width: 540px;
+}
+
+.top-1 {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 3px;
+}
+
+.hero h2 {
+    font-size: 3.2rem;
+    margin: 15px 0;
+    font-weight: 900;
+}
+
+.hero p {
+    color: #dddddd;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.btn-assistir {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-assistir:hover {
+    background: #cccccc;
+}
+
+/* =====================================
+   CATÁLOGO
+===================================== */
+
+.catalogo {
+    background: #141414;
+    padding: 20px 4% 60px;
+    overflow: hidden;
+}
+
+.categoria {
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.categoria h2 {
+    font-size: 1.45rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+/* =====================================
+   FILEIRAS DE FILMES
+===================================== */
+
+.grid-filmes {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 5px 20px;
+    scroll-behavior: smooth;
+}
+
+/* Barra de rolagem */
+
+.grid-filmes::-webkit-scrollbar {
+    height: 7px;
+}
+
+.grid-filmes::-webkit-scrollbar-track {
+    background: #222222;
+}
+
+.grid-filmes::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 10px;
+}
+
+/* =====================================
+   CARDS PADRÃO
+===================================== */
+
+.grid-filmes .quadrado {
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    display: flex;
+    flex-direction: column;
+    background: #222222;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.grid-filmes .quadrado:hover {
+    transform: scale(1.06);
+    z-index: 5;
+}
+
+.grid-filmes .quadrado img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+.grid-filmes .quadrado p {
+    color: white;
+    padding: 9px;
+    font-size: 0.85rem;
+    background: #222222;
+    text-align: center;
+}
+
+/* =====================================
+   1. DESTAQUES - GRANDES
+===================================== */
+
+.grid-filmes.destaque .quadrado {
+    flex-basis: 260px !important;
+    width: 260px !important;
+    height: 390px !important;
+}
+
+/* =====================================
+   2. SÉRIES - MÉDIOS
+===================================== */
+
+.grid-filmes.series .quadrado {
+    flex-basis: 190px !important;
+    width: 190px !important;
+    height: 285px !important;
+}
+
+/* =====================================
+   3. TERROR - PEQUENOS
+===================================== */
+
+.grid-filmes.terror .quadrado {
+    flex-basis: 145px !important;
+    width: 145px !important;
+    height: 220px !important;
+}
+
+/* =====================================
+   4. POPULARES - NORMAIS
+===================================== */
+
+.grid-filmes.populares .quadrado {
+    flex-basis: 170px !important;
+    width: 170px !important;
+    height: 255px !important;
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 3%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        min-height: 380px;
+        background-position: center;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .catalogo {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .grid-filmes.destaque .quadrado {
+        flex-basis: 200px !important;
+        width: 200px !important;
+        height: 300px !important;
+    }
+
+    .grid-filmes.series .quadrado {
+        flex-basis: 155px !important;
+        width: 155px !important;
+        height: 235px !important;
+    }
+
+    .grid-filmes.terror .quadrado {
+        flex-basis: 115px !important;
+        width: 115px !important;
+        height: 175px !important;
+    }
+
+    .grid-filmes.populares .quadrado {
+        flex-basis: 140px !important;
+        width: 140px !important;
+        height: 210px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #nomeUsuario {
+        display: none;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .categoria h2 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* SOMENTE EM ALTA SERÁ GRANDE */
+
+.grid-filmes {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 10px 5px 20px;
+}
+
+.grid-filmes .quadrado {
+    flex: 0 0 155px !important;
+    width: 155px !important;
+    height: 230px !important;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.grid-filmes .quadrado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* APENAS EM ALTA FICA GRANDE */
+
+.grid-filmes.destaque .quadrado {
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    height: 400px !important;
+}
+
+/* TODAS AS OUTRAS CATEGORIAS */
+
+.grid-filmes.series .quadrado,
+.grid-filmes.acao .quadrado,
+.grid-filmes.terror .quadrado,
+.grid-filmes.comedia .quadrado,
+.grid-filmes.animacao .quadrado {
+    flex: 0 0 155px !important;
+    width: 155px !important;
+    height: 230px !important;
+}
+
+.grid-filmes .quadrado:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    z-index: 2;
+}
